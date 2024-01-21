@@ -11,6 +11,10 @@ app.get('/username', function(req, res) {
   res.send('username is good');
 });
 
+app.get(/\/(user|username)\w*/, function(req, res) {
+  res.send('requirement is met');
+});
+
 app.use(function(req, res) {
   res.status(404).send('404 - Not Found');
 });
